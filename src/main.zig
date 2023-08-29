@@ -149,7 +149,7 @@ pub fn init(app: *App) !void {
     var prng = std.rand.DefaultPrng.init(seed);
 
     for (&cell_state_array) |*cell_state| {
-        cell_state.* = if (prng.random().float(f32) > 0.8) 1 else 0;
+        cell_state.* = if (prng.random().float(f32) > 0.6) 1 else 0;
     }
 
     core.queue.writeBuffer(cell_state_storage[0], 0, &cell_state_array);
